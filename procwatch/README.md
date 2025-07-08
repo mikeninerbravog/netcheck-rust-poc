@@ -1,70 +1,104 @@
-## 📄 `procwatch/README.md`
+# ⚙️ DevOps Toolbox in Rust
 
-````markdown
-# 🧠 procwatch
+A collection of minimal, fast, and CI/CD-ready DevOps tools written in Rust.
 
-A minimal Rust CLI tool to monitor active Linux processes.  
-Built for DevOps pipelines, system introspection, and learning Rust with `/proc`.
+This project showcases how Rust can be used to build production-grade system utilities with clear structure, safe execution, and excellent performance — all designed for Linux environments and terminal-based operations.
 
 ---
 
-## 🚀 What It Does
+## 🧱 Modules
 
-- Lists active processes from `/proc`
-- Outputs: `PID`, `name`, `status`
-- Supports filtering by name (`--filter`)
-- Saves structured JSON (`output/`) and logs (`logs/`)
-- CI/CD-ready with zero dependencies outside Linux
+| Tool        | Description                                | Status     |
+|-------------|--------------------------------------------|------------|
+| `netcheck`  | HTTP health checker with logging + JSON    | ✅ Complete |
+| `procwatch` | Process monitor with CLI filtering         | ✅ Complete |
+| `perfstat`  | *(Coming soon)* CPU, memory, disk usage    | 🕓 Planned  |
+| `netpeek`   | *(Coming soon)* Networking probes + DNS    | 🕓 Planned  |
+| `textshaper`| *(Coming soon)* Text/Log filtering toolkit | 🕓 Planned  |
 
 ---
 
-## 🛠️ Usage
+## 📦 Folder Structure
 
-### 🧱 Build
+```
 
-```bash
-make build
+rust-devops/
+├── netcheck/       # HTTP check CLI
+├── procwatch/      # Process monitoring CLI
+├── perfstat/       # (to be added)
+├── netpeek/        # (to be added)
+├── textshaper/     # (to be added)
+└── README.md       # This file
+
 ````
 
-### ▶️ Run (all processes)
+---
+
+## 🌐 Module: `netcheck`
+
+**A minimal Rust CLI for HTTP health checks.**  
+Built for DevOps pipelines, CI/CD integration, and infrastructure observability.
+
+### 🚀 Features
+
+- Takes a URL as input
+- Performs a `GET` request
+- Measures response time
+- Logs output to file and JSON
+- Exits with status `0` (success) or `1` (failure)
+
+### 🎥 Demo
+
+![Demo](netcheck/.assets/demo1.gif)
+
+### 🧰 Usage
 
 ```bash
+cd netcheck
+make build
 make run
-```
+./target/release/netcheck https://example.com
+````
 
-### 🔎 Run with filter
+### 📁 Output
+
+* JSON: `output/netcheck.json`
+* Logs: `logs/netcheck.log`
+
+---
+
+## 🧠 Module: `procwatch`
+
+**A lightweight Rust CLI for Linux process monitoring.**
+Built for system introspection, CI pipelines, and automation scenarios.
+
+### 🚀 Features
+
+* Lists all active processes via `/proc`
+* Shows `PID`, `Name`, `Status`
+* Filter by name: `--filter <name>`
+* Saves output as structured JSON
+* Logs executions with timestamps
+
+### 🧰 Usage
 
 ```bash
-./target/release/procwatch --filter ssh
+cd procwatch
+make build
+./target/release/procwatch --filter sshd
 ```
 
----
+### 📁 Output
 
-## 📂 Project Layout
+* JSON: `output/procs.json`
+* Logs: `logs/procwatch.log`
+
+### 📤 Example
 
 ```
-procwatch/
-├── src/main.rs           # Rust source
-├── Makefile              # Build/run helper
-├── input/                # Reserved for future configs
-├── output/procs.json     # Result in JSON
-├── logs/procwatch.log    # Timestamped execution logs
-├── Cargo.toml            # Dependencies
-└── README.md             # This file
-```
-
----
-
-## 📈 Example Output
-
-### Terminal
-
-```text
 [322] sshd (Sleeping)
 [1311] sshd (Sleeping)
 ```
-
-### JSON
 
 ```json
 [
@@ -72,27 +106,14 @@ procwatch/
     "pid": 322,
     "name": "sshd",
     "status": "Sleeping"
-  },
-  ...
+  }
 ]
-```
-
----
-
-## 🔧 DevOps Context
-
-`procwatch` can be embedded in pipelines:
-
-```yaml
-- name: Check for running app
-  run: ./target/release/procwatch --filter myservice
 ```
 
 ---
 
 ## 📜 License
 
-MIT — Free to use and extend.
+MIT — free to use, modify, and distribute.
 
-> Built by [Mike Niner](https://github.com/mikeninerbravog) with 🦀
-
+> Built with 🦀 by [Mike Niner](https://github.com/mikeninerbravog)
