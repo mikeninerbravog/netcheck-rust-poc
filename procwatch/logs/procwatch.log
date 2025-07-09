@@ -1,1 +1,3 @@
 [2025-07-08T21:41:09.938079017Z] No filter | Found 271 process(es)
+[2025-07-08T22:06:41.665586790Z] Filter: 'sshd' | Found 1 process(es)
+[2025-07-08T22:06:46.026304099Z] No filter | Found 267 process(es)

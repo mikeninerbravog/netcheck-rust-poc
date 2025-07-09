@@ -1125,16 +1125,6 @@
     "status": "S"
   },
   {
-    "pid": 150204,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
-    "pid": 150220,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
     "pid": 173888,
     "name": "geany",
     "status": "S"
@@ -1160,16 +1150,6 @@
     "status": "S"
   },
   {
-    "pid": 177942,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
-    "pid": 186384,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
     "pid": 186479,
     "name": "chrome",
     "status": "S"
@@ -1191,17 +1171,12 @@
   },
   {
     "pid": 203900,
-    "name": "kworker/1:0-mm_percpu_wq",
+    "name": "kworker/1:0-events",
     "status": "I"
   },
   {
     "pid": 203901,
     "name": "kworker/2:0-cgroup_destroy",
-    "status": "I"
-  },
-  {
-    "pid": 209843,
-    "name": "kworker/0:2-cgroup_destroy",
     "status": "I"
   },
   {
@@ -1212,21 +1187,6 @@
   {
     "pid": 213947,
     "name": "bash",
-    "status": "S"
-  },
-  {
-    "pid": 214663,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
-    "pid": 214751,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
-    "pid": 214762,
-    "name": "chrome",
     "status": "S"
   },
   {
@@ -1241,22 +1201,12 @@
   },
   {
     "pid": 215050,
-    "name": "kworker/u8:4-events_unbound",
-    "status": "I"
-  },
-  {
-    "pid": 215051,
-    "name": "kworker/u8:5-flush-8:16",
-    "status": "I"
-  },
-  {
-    "pid": 215053,
-    "name": "kworker/u8:7-flush-8:16",
+    "name": "kworker/u8:4-flush-8:16",
     "status": "I"
   },
   {
     "pid": 215064,
-    "name": "kworker/3:0-mm_percpu_wq",
+    "name": "kworker/3:0-events",
     "status": "I"
   },
   {
@@ -1315,42 +1265,72 @@
     "status": "S"
   },
   {
-    "pid": 216854,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
-    "pid": 217706,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
-    "pid": 217957,
-    "name": "chrome",
-    "status": "S"
-  },
-  {
     "pid": 218210,
     "name": "kworker/0:0-events",
     "status": "I"
   },
   {
-    "pid": 218293,
-    "name": "kworker/u8:0-events_unbound",
+    "pid": 222398,
+    "name": "code",
+    "status": "S"
+  },
+  {
+    "pid": 222481,
+    "name": "kworker/u8:0-flush-8:16",
     "status": "I"
   },
   {
-    "pid": 218527,
+    "pid": 222823,
+    "name": "updatedb.plocat",
+    "status": "D"
+  },
+  {
+    "pid": 222858,
+    "name": "kworker/u8:2-events_unbound",
+    "status": "I"
+  },
+  {
+    "pid": 223849,
     "name": "chrome",
     "status": "S"
   },
   {
-    "pid": 218799,
-    "name": "make",
+    "pid": 224039,
+    "name": "chrome",
     "status": "S"
   },
   {
-    "pid": 218800,
+    "pid": 224048,
+    "name": "chrome",
+    "status": "S"
+  },
+  {
+    "pid": 225504,
+    "name": "chrome",
+    "status": "S"
+  },
+  {
+    "pid": 225941,
+    "name": "kworker/u8:1",
+    "status": "I"
+  },
+  {
+    "pid": 226208,
+    "name": "chrome",
+    "status": "S"
+  },
+  {
+    "pid": 226309,
+    "name": "chrome",
+    "status": "S"
+  },
+  {
+    "pid": 226386,
+    "name": "chrome",
+    "status": "S"
+  },
+  {
+    "pid": 226430,
     "name": "procwatch",
     "status": "R"
   }
