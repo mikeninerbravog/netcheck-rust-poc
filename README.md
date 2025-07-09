@@ -8,13 +8,13 @@ This project showcases how Rust can be used to build production-grade system uti
 
 ## 🧱 Modules
 
-| Tool        | Description                                | Status     |
-|-------------|--------------------------------------------|------------|
-| `netcheck`  | HTTP health checker with logging + JSON    | ✅ Complete |
-| `procwatch` | Process monitor with CLI filtering         | ✅ Complete |
-| `perfstat`  | System performance: CPU, memory, disk      | ✅ Complete |
-| `netpeek`   | *(Coming soon)* Networking probes + DNS    | 🕓 Planned  |
-| `textshaper`| *(Coming soon)* Text/Log filtering toolkit | 🕓 Planned  |
+| Tool         | Description                                | Status     |
+|--------------|--------------------------------------------|------------|
+| `netcheck`   | HTTP health checker with logging + JSON    | ✅ Complete |
+| `procwatch`  | Process monitor with CLI filtering         | ✅ Complete |
+| `perfstat`   | System performance: CPU, memory, disk      | ✅ Complete |
+| `netpeek`    | DNS resolver + IP probe + reachability     | ✅ Complete |
+| `textshaper` | *(Coming soon)* Text/Log filtering toolkit | 🕓 Planned  |
 
 ---
 
@@ -26,7 +26,7 @@ rust-devops/
 ├── netcheck/       # HTTP check CLI
 ├── procwatch/      # Process monitoring CLI
 ├── perfstat/       # System stats collector
-├── netpeek/        # (to be added)
+├── netpeek/        # Network diagnostics CLI
 ├── textshaper/     # (to be added)
 └── README.md       # This file
 
@@ -158,6 +158,54 @@ make run
   "load_avg": [0.14, 0.08, 0.06],
   "disk_total": 51200000000,
   "disk_used": 18900000000
+}
+```
+
+---
+
+## 📡 Module: `netpeek`
+
+**A Rust CLI for network visibility and diagnostics.**
+It resolves domains, fetches your public IP, and checks reachability — without root.
+
+### 🚀 Features
+
+* DNS resolution (`example.com` → IPs)
+* Fetches external IP (`https://httpbin.org/ip`)
+* Reachability check via TCP port 80
+* Outputs structured JSON
+* CI/CD and monitoring ready
+
+### 🧰 Usage
+
+```bash
+cd netpeek
+make build
+make run
+```
+
+### 📁 Output
+
+* JSON: `output/netpeek.json`
+* Logs: `logs/netpeek.log`
+
+### 📤 Example Output
+
+```text
+🌐 netpeek @ 2025-07-08T21:41:00Z
+- Domain: example.com
+- Resolved IPs: ["93.184.216.34"]
+- External IP: 189.102.88.42
+- Reachable: true
+```
+
+```json
+{
+  "timestamp": "2025-07-08T21:41:00Z",
+  "domain": "example.com",
+  "resolved_ips": ["93.184.216.34"],
+  "external_ip": "189.102.88.42",
+  "reachable": true
 }
 ```
 
